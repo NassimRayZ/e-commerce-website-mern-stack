@@ -7,10 +7,13 @@
     "autoprefixer": "^10.4.5",
     "browserslist": "^4.21.1",
     "caniuse-lite": "^1.0.30001363",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.1",
     "electron-to-chromium": "^1.4.178",
     "escalade": "^3.1.1",
     "express": "^4.18.1",
     "fraction.js": "^4.2.0",
+    "mongoose": "^6.4.3",
     "nanoid": "^3.3.4",
     "node-releases": "^2.0.5",
     "normalize-range": "^0.1.2",
@@ -21,8 +24,16 @@
     "update-browserslist-db": "^1.0.4"
   },
   "scripts": {
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Rayene Nassim ZORGANI",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.2.2",
+    "nodemon": "^2.0.19"
+  },
+  "type": "module"
 }
